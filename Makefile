@@ -1,10 +1,14 @@
-SRC_PATH = ./src
+# Config
+# Source folder
+SRC = ./src
+# Build folder
+BUILD_PATH = ./build/
+# Title of the output file
+OUT = thesis
 
-THESIS_PATH = ./build/
-THESIS_TITLE = thesis
-
-DST = $(THESIS_PATH)$(THESIS_TITLE).pdf
-MD_FILES := $(shell find $(SRC_PATH) -type f -name "*.md" | grep -v "README" | sort)
+# Script
+MD_FILES := $(shell find $(SRC) -type f -name "*.md" | grep -v "README" | sort)
+DST = $(BUILD_PATH)$(OUT).pdf
 
 default: run
 
@@ -15,4 +19,4 @@ run: build
 	evince $(DST) > /dev/null &
 
 clean:
-	rm -rf $(THESIS_PATH)*
+	rm -rf $(BUILD_PATH)*
