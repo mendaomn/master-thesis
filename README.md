@@ -16,3 +16,4 @@ This repository contains my Master thesis, worked on at Mondeca (Paris, FR) in t
 
 Simply run `make`
 
+Make sure you installed the dependencies `pandoc` and `texlive`
