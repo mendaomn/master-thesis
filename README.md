@@ -12,3 +12,7 @@ This repository contains my Master thesis, worked on at Mondeca (Paris, FR) in t
 - [Chapter 6](./ch6/ch6.md), the back-end: architecture, new features and the legacy problem
 - [Chapter 7](./ch7/ch7.md), wrapping up: i18n, docs and maintenance
 
+## Build instructions
+
+Simply run `make`
+
