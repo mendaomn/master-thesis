@@ -266,8 +266,3 @@ My first day of mocking up saw me transforming this sketch
 into this HTML page
 
 ![Mockup - Overview][mockup_overview]
-
-[mockup_overview]: ./img/mockup-overview.png "Mockup - Overview"
-[sketch_overview]: ./img/sketch-overview.png "Sketch - Overview"
-[oldcam_annotations]: ./img/oldCAM-annotations.png "Old CAM - Annotations"
-[oldcam_overview]: ./img/oldCAM-overview.png "Old CAM - Overview"

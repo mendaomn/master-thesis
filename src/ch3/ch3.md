@@ -52,7 +52,4 @@ Another abrupt change that I wanted to avoid is the elimination of a tag. When a
 
 ![Review screen, notification  animation][review_notification_animation]
 
-[review_summary]: ./img/review-summary.png "Review screen, summary"
-[analyze_screen]: ./img/analyze-screen.png "Analyze screen, global glance"
-[review_sidebar_animation]: ./img/review-sidebar-animation.png" Review screen, sidebar animation"
-[review_notification_animation]: ./img/review-notification-animation.png" Review screen, sidebar animation"
+

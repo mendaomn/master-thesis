@@ -64,8 +64,3 @@ the user thinks of a tag she wants to add
 the user tries to help taxonomists by indicating a class
 I made the process more user friendly, by guiding through the tag addition with a wizard, giving also the possibility not to suggest any class, since one could know what to do with the tag she is thinking of. Also, I got rid of the notion of “class” by using the “type” term, which can be less confusing for some users. In addition to this, I improved the way new tags get integrated in the UI, by adding a “manual entry” type, that can be reached through the filters. As a result, the user has a quick method to revisit what she added, and possibly change her mind.
 
-[overview_screen_A]: ./img/overview-A.png "Overview screen, version A"
-[overview_screen_B]: ./img/overview-B.png "Overview screen, version B"
-[review_screen_open]: ./img/review-open.png "Review screen, filters open"
-[review_screen_breadcrumb]: ./img/review-breadcrumb.png "Review screen, braedcrumb faceted navigation"
-[review_screen_notification]: ./img/review-notification.png "Review screen, removing notification, with possibility to undo"

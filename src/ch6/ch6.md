@@ -46,4 +46,3 @@ By digging a little bit more into the problem, I found out that, while the annot
 
 #### GIFs of interactions?
 
-[architecture]: ./img/architecture.png "CAM Architecture"
