@@ -4,13 +4,13 @@ This repository contains my Master thesis, worked on at Mondeca (Paris, FR) in t
 
 ## Table of content
 
-- [Chapter 1](./ch1/ch1.md), the context: introducing Mondeca, the product and my responsibilities
-- [Chapter 2](./ch2/ch2.md), the process: technologies, specs and sketches
-- [Chapter 3](./ch3/ch3.md), the core screens: overview and review
-- [Chapter 4](./ch4/ch4.md), focusing on the user: from useful to usable
-- [Chapter 5](./ch5/ch5.md), #perfmatters: a deep dive into performance
-- [Chapter 6](./ch6/ch6.md), the back-end: architecture, new features and the legacy problem
-- [Chapter 7](./ch7/ch7.md), wrapping up: i18n, docs and maintenance
+- [Chapter 1](./src/ch1/ch1.md), the context: introducing Mondeca, the product and my responsibilities
+- [Chapter 2](./src/ch2/ch2.md), the process: technologies, specs and sketches
+- [Chapter 3](./src/ch3/ch3.md), the core screens: overview and review
+- [Chapter 4](./src/ch4/ch4.md), focusing on the user: from useful to usable
+- [Chapter 5](./src/ch5/ch5.md), #perfmatters: a deep dive into performance
+- [Chapter 6](./src/ch6/ch6.md), the back-end: architecture, new features and the legacy problem
+- [Chapter 7](./src/ch7/ch7.md), wrapping up: i18n, docs and maintenance
 
 ## Build instructions
 
