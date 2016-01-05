@@ -10,13 +10,13 @@ OUT = thesis
 MD_FILES := $(shell find $(SRC) -type f -name "*.md" | grep -v "README" | sort)
 DST = $(BUILD_PATH)$(OUT).pdf
 
-default: run
+default: build run
 
 build: clean
 	pandoc --toc --number-sections --chapters $(MD_FILES) -s -o $(DST)
 
-run: build
-	evince $(DST) > /dev/null &
+run:
+	evince $(DST) 2> /dev/null &
 
 clean:
 	rm -rf $(BUILD_PATH)*
