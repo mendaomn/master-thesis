@@ -1,7 +1,7 @@
-[mockup_overview]: ./src/tail/img/mockup-overview.png "Mockup - Overview"
-[sketch_overview]: ./src/tail/img/sketch-overview.png "Sketch - Overview"
-[oldcam_annotations]: ./src/tail/img/oldCAM-annotations.png "Old CAM - Annotations"
-[oldcam_overview]: ./src/tail/img/oldCAM-overview.png "Old CAM - Overview"
+[mockup_overview]: ./src/tail/img/mockup-overview.png "Mockup, Overview"
+[sketch_overview]: ./src/tail/img/sketch-overview.png "Sketch, Overview"
+[oldcam_annotations]: ./src/tail/img/oldCAM-annotations.png "Old CAM, Annotations"
+[oldcam_overview]: ./src/tail/img/oldCAM-overview.png "Old CAM, Overview"
 
 [overview_screen_A]: ./src/tail/img/overview-A.png "Overview screen, version A"
 [overview_screen_B]: ./src/tail/img/overview-B.png "Overview screen, version B"

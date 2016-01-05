@@ -53,6 +53,7 @@ when the user will change views or pages, all the structural element will be imm
 Here’s what the pages look like before the content is dynamically injected.
 
 ![Overview screen, application shell][overview-appshell]
+
 ![Review screen, application shell][review-appshell]
 
 Two metrics: runtime smoothness
@@ -67,5 +68,5 @@ Much a different process was fixing the performance issues in the review screen.
 
 ![http://csstriggers.com/ - It offers a quick  summary of which CSS properties trigger which phase of the rendering process][csstriggers]
 
-Therefore, one might think that the fix would simply consist in animating the transform property of the filters, in order to exploit GPU acceleration; however, this was already the case, as the filters’ box was translating into view by means of transform: translateX(0). What was missing was a hint to the browser, telling it that the HTML element containing the filters’ box was going to change its transform property, thus allowing it to be layer-promoted. Without going too much into the technicalities of this procedure, whenever a moving element needs to be computed by the compositor thread, it also needs to live within its own layer; in the past, in order to place an element inside a new layer, there was the need to use the transform: translateZ(0) hack, which was basically forcing layer-promotion. Today however, it suffices to use will-change: transform, which enables every kind of optimization for that kind of transition by the rendering engine, layer-promotion included.
+Therefore, one might think that the fix would simply consist in animating the transform property of the filters, in order to exploit GPU acceleration; however, this was already the case, as the filters’ box was translating into view by means of transform: `translateX(0)`. What was missing was a hint to the browser, telling it that the HTML element containing the filters’ box was going to change its transform property, thus allowing it to be layer-promoted. Without going too much into the technicalities of this procedure, whenever a moving element needs to be computed by the compositor thread, it also needs to live within its own layer; in the past, in order to place an element inside a new layer, there was the need to use the transform: `translateZ(0)` hack, which was basically forcing layer-promotion. Today however, it suffices to use will-change: transform, which enables every kind of optimization for that kind of transition by the rendering engine, layer-promotion included.
 
