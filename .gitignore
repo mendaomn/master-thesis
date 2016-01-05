@@ -1,6 +1,9 @@
 ## Project-specific
 build/*
 
+## Text editor
+*.sublime-*
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
