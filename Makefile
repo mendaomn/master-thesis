@@ -13,7 +13,7 @@ DST = $(BUILD_PATH)$(OUT).pdf
 default: run
 
 build: clean
-	pandoc $(MD_FILES) -s -o $(DST)
+	pandoc --toc --number-sections --chapters $(MD_FILES) -s -o $(DST)
 
 run: build
 	evince $(DST) > /dev/null &
