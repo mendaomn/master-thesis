@@ -37,6 +37,7 @@ On the front-end side, I made heavy use of tooling and automation, as it is stan
  -  compression of images
 
 More on these techniques in Chapter 5.
+In addition to tasks automation, another area in which tools can improve programmers' life is dependency management; I used `bower` to manage JavaScript and CSS libraries, and `npm` to manage NodeJS modules, like `gulp`'s tasks and external tools. It is especially useful to rely on such tools when cooperating with other people, since they can easily set all the tooling up and fetch all dependencies by simply downloading the source and running the install scripts: `npm install && bower install`.  
 
 #### Back-end code and deployment {-}
 
