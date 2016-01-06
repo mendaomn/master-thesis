@@ -38,6 +38,8 @@ As it is now, the CAM UI allows the user to do the following:
 
 This is a fairly basic overview of what it can be done but, as I undertake the challenge of improving the way the user can interact with the system, I'd rather understand the 10.000 feet view of the product than diving immediately deep into the details and the nuances of it. Such a first analysis gives the right vision of what needs to be focused on, and, most importantly, allows for a clearer conception of what the underlying servers are capable of producing or doing, in response to eventual user's requests.
 
+**During the last month**, the main focus of CAM was better defined: while it is mostly used as demo for potential clients at the moment, the idea is to migrate to a fully fledged app, targeting those human agents or indexers who are hourly paid to verify and review automatically assigned tags, bringing on the table their own expertise on a topic. For instance, a surgeon gets paid to delete wrong tags, add missing ones and review the general correctness of the analysis of all the tags related to surgery or body anatomy. The goal becomes then to help such a kind of users to do their job in as little time as possible; the challenge is to demonstrate to potential clients that, through the use of the tools this application provides, human indexers can analyze many more documents in a given time span, than they would by manually reading and annotating the text.
+
 ## State of the art
 
 During my first days I searched for competing text mining tools with the purpose of focusing on both the different features they present and the ways they present their results, in order to take inspiration in terms of visualization techniques. Such an activity led me to narrow down a list of very simplified features competitors implement:
@@ -172,13 +174,13 @@ This allows for further addition of filters.
 The results are simply 2 different views of the same knowledge:
 
  - selected entities in a list
- - selected enetities in the text
+ - selected entities in the text
 
 The list of entities shows, for every entry, the following information:
 
  - name
  - taxonomy
- - occurrencies
+ - occurrences
  - score
 
 The text view displays the document itself and, via highlighting or underlining, it allows the user to locate the selected entities in the text itself.
@@ -198,11 +200,11 @@ Both valid and invalid RDF is further split into three chunks:
 
  - metadata RDF
  - knowledge RDF
- - occurrencies RDF
+ - occurrences RDF
 
 The user can decide which one she wants to read through buttons.
 
-The RDF code is displayed in a searchable area: the user can search for a particular word, or tag, and go directly to that part of the code.
+The RDF code is displayed in a researchable area: the user can search for a particular word, or tag, and go directly to that part of the code.
 Tags in the code will allow collapsing and expanding actions, as in regular text editors.
 
 ##### Troubleshooting: Log {-}
@@ -216,7 +218,7 @@ The log messages are displayed in a table containing the following fields:
  - processing time
  - date
  - time of the day
- - resence of a stacktrace (YES or NO)
+ - presence of a stacktrace (YES or NO)
 
 In case a stacktrace is present, clicking on "YES" will lead to a view showing:
 
@@ -242,7 +244,7 @@ My suggestions for it would be:
 
 ## The first mock-up
 
-After all agreeing on the screens, I started to mock up in HTML a static version of the overview page, so that it can be seen how it looks like in the browser. Moreover, it allows the Team Leader and me to start thinking of the theming of the application, phase which usually gets skipped in the sketching process.
+After agreeing on the screens, I started to mock up in HTML a static version of the overview page, so that it can be seen how it looks like in the browser. Moreover, it allows the Team Leader and me to start thinking of the theming of the application, phase which usually gets skipped in the sketching process.
 My first day of mocking up saw me transforming this sketch
 
 ![Sketch, Overview][sketch_overview]
