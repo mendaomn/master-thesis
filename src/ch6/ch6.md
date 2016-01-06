@@ -1,30 +1,44 @@
-# Chapter 6: the back-end
-### Architecture, new features and the legacy problem
+# The back-end
+
+Architecture, new features and the legacy problem
 
 During my fifth month as intern, I worked on the back-end side of the project, my tasks being refactoring the existing code, developing new features and integrating it on the front-end.
 
-Architecture
+## Architecture
 
-As I step in and take charge of the back-end of the web application for CAM, a valuable and rich codebase already exists. Let’s quickly review the architecture of the system, by listing its components.
+As I step in and take charge of the back-end of the web application for CAM, a valuable and rich code base already exists. Let’s quickly review the architecture of the system, by listing its components.
 
 ![CAM Architecture][architecture]
 
 On the front-end, the UI we discussed so far. On the back-end instead, there exist two separate and independent components:
-the Annotation server, it’s the core engine of the whole CAM system. It’s capable of analysing, mining and augmenting the documents in input, and it outputs in RDF/XML format
-the Web Server, which acts as mediator between the client and the Annotation server, has two primary roles: serving static and dynamic assets to the client, and fetching live analysis data from the Annotation server
 
-Since a basic UI for CAM already existed in the past, a Web server is already set up and most of the work needed to parse the RDF results and build an Object representation of it in memory is already available, and therefore there’s no necessity to rebuild everything from scratch. The problem however is that the new client application is expecting certain input data, some of them totally new, with a given structure, in a JSON format, and so on. My job then is to refactor the existing data into a more suitable shape, develop and build new features and aggregations on top of the available ones, and integrate such a suite of services on the client, by means of a simple RESTful type of service.
-I thus decided to create a mediator module, sitting between client and server, capable of managing the interactions between the two through an API, which exposes the minimal interface needed to make it work; by doing this, I decouple as much as possible both the UI and the already existing Web server, allowing future versions of either one of the other to be easily plugged in or replaced. In addition to this, my module abstracts the interactions and hides as much as possible the underlying processing jobs that take place on the web server, the goal of which is to support Mondeca’s decision to outsource CAM’s UI maintainance to another company in the future.
+ - the _Annotation server_, it’s the core engine of the whole CAM system. It’s capable of analyzing, mining and augmenting the documents in input, and it outputs in RDF/XML format
+ - the _Web Server_, which acts as mediator between the client and the Annotation server, has two primary roles: serving static and dynamic assets to the client, and fetching live analysis data from the Annotation server
 
-# Server-side
- - architecture schema:
-     + cam server
-     + cam ui backend
-     + --> my module
-     + cam ui frontend
- - module's structure
-     + sessions
-     + can I cookie if RESTful?
+Since a basic UI for CAM already existed in the past, a Web server is already set up and most of the work needed to parse the RDF results and build an Object representation of it in memory is already available, and therefore there’s no necessity to rebuild everything from scratch. The problem however is that the new client application is expecting certain input data - some of them totally new - with a given structure, in a JSON format, and so on. My job then is to re-factor the existing data into a more suitable shape, develop and build new features and aggregations on top of the available ones, and integrate such a suite of services on the client, by means of a simple RESTful type of service.
+I thus decided to create a _mediator_ module, sitting between client and server, capable of managing the interactions between the two through an API, which exposes the minimal interface needed to make it work; by doing this, I decouple as much as possible both the UI and the already existing Web server, allowing future versions of either one of the other to be easily plugged in or replaced. In addition to this, my module abstracts the interactions and hides as much as possible the underlying processing jobs that take place on the web server, aiming to support Mondeca's decision to outsource CAM’s UI maintenance to another company in the future.
+
+## Module's structure
+
+The new module exposes the following services:
+
+ - _getAnalyzeData_, which returns all data needed by the Analyze page
+ - _getOverviewData_, _getReviewData_ and _getTroubleshootingData_, which take a document and return the relative data
+ - _indexDocument_, which takes a document and perform the right analysis, depending on the document's type (is it URL, free text, binary data, and so on)
+ - _getProgress_, which returns the current progress of the analysis process
+ - _publish_, which takes all user's modifications made to the analysis results, and stores them
+
+This reduces by a big amount the total surface of the API, which used to be bigger and, therefore, much less maintainable and too tightly coupled to the client's implementation. On the other hand, by using less finely grained services there exist the risk of making it too difficult to split pages on the client in smaller pages. This is a trade-off between ergonomics and adaptability, however I prefer this approach since it allows new developers to easily get on board and start writing code from their first day on both the client and server, without having too much to learn about client-server interactions; in addition to this, offering few and "big" services encourage front-end programmers to fetch all the needed data in one single request at load time, which, as described in Chapter 5, can be a big win in terms of both perceived and computational performance. 
+Even though the basic structure of the module might seem completely RESTful, there are a couple of exceptions:
+
+ - the _login_ service, which makes use of cookies to authenticate the user in the following requests; this isn't completely RESTless, since it doesn't make use of such cookies to store session data
+ - the _getProgress_ service, which, at every call, exposes some session-tied state the server is keeping (the progress of the analysis asked by the user)
+
+## Data refactoring
+
+As mentioned in the previous paragraphs, one of the main goals of the mediator module is to re-factor the result into a more suitable format, while enriching it by pre-computing useful aggregation such as totals, counts, and so on. 
+
+## Outline
  - data refactoring 
  - performance fixes:  
      + client doesn't wait document to be indexed (it's async)

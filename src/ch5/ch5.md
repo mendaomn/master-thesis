@@ -1,4 +1,4 @@
-# Chapter 5: #perfmatters 
+# #perfmatters 
 
 A deep dive into performance
 

@@ -7,13 +7,18 @@ BUILD_PATH = ./build/
 OUT = thesis
 
 # Script
+# Markdown files list
 MD_FILES := $(shell find $(SRC) -type f -name "*.md" | grep -v "README" | sort)
+# Destination file, in PDF
 DST = $(BUILD_PATH)$(OUT).pdf
 
-default: build run
+# Pandoc parameters
+PARS = --toc --number-sections --chapters
+
+default: build
 
 build: clean
-	pandoc --toc --number-sections --chapters $(MD_FILES) -s -o $(DST)
+	pandoc $(PARS) $(MD_FILES) -s -o $(DST)
 
 run:
 	evince $(DST) 2> /dev/null &
