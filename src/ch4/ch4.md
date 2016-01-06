@@ -1,6 +1,5 @@
 # Focusing on the user: from useful to usable
 
-
 A UCD-based approach
 
 There are a couple of aspects of the review screen that certainly demonstrate how designing for the user, or User Centered Design (UCD), is a great approach to make more usable products. In fact, some small additions and modification to the global behaviour of CAM are entirely due to this way of working, like the “reset filters” button I already mentioned, which enhances the user experience by reducing the number of clicks to switch from one filter to the other by a great deal, adopting a single color to highlight the terms in the text instead of using a color per class or category, which greatly improves the readability of the text, or providing affordances for the user to undo an action or rollback to a previous state, for example when she deletes some tags.
@@ -8,11 +7,15 @@ There are a couple of aspects of the review screen that certainly demonstrate ho
 ![Review screen, removing notification, with possibility to undo][review_screen_notification]
 
 The greatest challenge I’m facing designing the new version of CAM is being able of both improving the existing demo and suggest new features to be integrated in the application, so that it could be used as a stand-alone tool in the future. While doing this, I had the chance to modify some aspects of the user’s flow, revisiting the experience. A good example of this is the “add tag” action, which used to consist in the steps:
-select Class
-select Label among the ones corresponding to the selected class
+
+ - select Class
+ - select Label among the ones corresponding to the selected class
+
 This probably makes a lot of sense to a developer who also knows how the taxonomy works, but it doesn’t to a human indexer who usually isn’t trained in those terms. What actually happens during the usage of this function is:
-the user thinks of a tag she wants to add
-the user tries to help taxonomists by indicating a class
+
+ - the user thinks of a tag she wants to add
+ - the user tries to help taxonomists by indicating a class
+
 I made the process more user friendly, by guiding through the tag addition with a wizard, giving also the possibility not to suggest any class, since one could know what to do with the tag she is thinking of. Also, I got rid of the notion of “class” by using the “type” term, which can be less confusing for some users. In addition to this, I improved the way new tags get integrated in the UI, by adding a “manual entry” type, that can be reached through the filters. As a result, the user has a quick method to revisit what she added, and possibly change her mind.
 
 During my third month as intern I worked on another screen of the application and further improved the existing ones by working on both functionalities and performance. 

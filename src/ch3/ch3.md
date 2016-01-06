@@ -1,7 +1,8 @@
-# Chapter 3: the core screens
-### Overview and review
+# The core screens
 
-Screens: Overview
+In the following chapter, I commit to describe the most important screens of the application, trying to convey both the intended use and the reasoning behind those, which led to the conception of the layout. In other words, my intention is to describe the functionalities of the various parts of the application, while focusing on design decisions. The order of the exposition follows the chronological order in which they were validated and developed through the course of the project. 
+
+## Overview
 
 The first screen I focused on is the “overview“ screen, which is the landing page the user is redirected to after the analysis of a document has completed. The goal is to provide the user a quick glimpse of the most important results of the text mining and content enrichment process, while showing measures that could give some hints about what could be a good course of action from that moment on; so for instance, an administrator could look at this screen and be immediately aware of how good the underlying taxonomy is, whereas a human agent can see if there’s something obvious to do, like wrong automatic deletions of tags, or irrelevant terms that shouldn’t appear in the most relevant terms list. 
 Selecting the right quantity and type of information to display in this screen was tricky, since there was the need of containing everything in a single screen (no scroll allowed) while providing meaningful insights to both administrators (who primarily care about taxonomy’s quality and annotating system’s performance) and human indexers (who would like to be helped in the process of understanding what happened during the analysis and what can be easily fixed). For these reasons, my design includes just 9 “widgets”, organized in 3 rows, so that every piece of information is effortlessly reachable by the eye, being it widely separated by blank space from the other elements of the page. Measures and, more generally, data about the document, are grouped in a logical manner: on the left-hand side, “wordy” descriptive information is presented, such as metadata on the document itself, number of words analyzed, configuration settings applied to the pipeline in order to process this resource (mainly a list of the taxonomies involved and whether or not the content classifier was enabled). On the right-hand side, the real dashboard-like content, laid out top to bottom from most informative to most general. As we can see in the screenshot, in the first row I decided to put information that is widely related to the aboutness of the document itself, being it a high-level dissection of the main topics it touches, plus a sequence of tags produced by the underlying classifier, which is capable of spotting existing relationships between elements that come from the global knowledge, which it is formed over the document’s content: what this means is that, basing on some rules configured by the customer, the system can classify the document putting together both what it has been found in the text, and what it has been inferred by means of the taxonomy.
@@ -16,7 +17,7 @@ In conclusion, there is another important thing to notice about this first Overv
 
 ![Overview screen, version B][overview_screen_B]
 
-Screens: Review
+## Review
 
 Regarding the “review” screen, its main goal is to enable the users to quickly browse through a possibly very long list of tags, understand the logic that made the system annotate the document with those tags and, in case she considers some annotation wrong, remove one or more particular tags. Moreover, whenever the user realizes that an important tag is missing, either because it wasn’t detected in the text or because she thinks it’s correlated and useful to the company owning the content, she can add it: let’s say, an article covering some aspect of Michael Schumacher’s life, but never mentioning F1, can still be annotated with a “F1” tag by a human agent, in case this couldn’t be automatically inferred by the system. With these objectives in mind I approached the design of this screen from the user’s point of view entirely. In order to better express how I did this, let’s rely on a user story: 
 
@@ -32,7 +33,8 @@ Finally, always along the lines of helping a human agent do her job quickly and 
 ![Review screen, breadcrumb faceted navigation][review_screen_breadcrumb]
 
 
-Screens: Analyze
+## Analyze
+
 Introducing the “analyze” screen (in lack of a better name). This screen is probably going to be the first one that the users are going to interact with: indeed, it contains the core controls which enable them to choose the resources to submit to the analysis process, see the progress of said analysis and then dive into the results for the selected resource. Moreover, here one can change some of the workflow’s parameters: remove some taxonomies from the list of the ones that will be used, disable the classifier or specify which rules should it take into account during its classification process (which is, indeed, rule-based).
 In order to design a solution for all of these tasks, I decided to split the needs the user might have in two sections: on one hand there is the resource selection, which should include buttons to add files/resources, a list of the selected ones, a way to change the parameters, and so on; on the other hand, there is the process monitoring, which should provide visual feedback for the user, such as an indication of how long the process will take, which resources have already been processed, and so on. 
 After having done this, I tackled the design challenges and, through a sequence of iterations, I came up with a solution composed by the following elements:
