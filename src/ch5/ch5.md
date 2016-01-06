@@ -1,4 +1,4 @@
-# #perfmatters 
+# Perfmatters 
 
 A deep dive into performance
 

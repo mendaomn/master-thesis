@@ -22,24 +22,25 @@ I thus decided to create a _mediator_ module, sitting between client and server,
 
 The new module exposes the following services:
 
- - _getAnalyzeData_, which returns all data needed by the Analyze page
- - _getOverviewData_, _getReviewData_ and _getTroubleshootingData_, which take a document and return the relative data
- - _indexDocument_, which takes a document and perform the right analysis, depending on the document's type (is it URL, free text, binary data, and so on)
- - _getProgress_, which returns the current progress of the analysis process
- - _publish_, which takes all user's modifications made to the analysis results, and stores them
+ - `getAnalyzeData`, which returns all data needed by the Analyze page
+ - `getOverviewData`, `getReviewData` and `getTroubleshootingData`, which take a document and return the relative data
+ - `indexDocument`, which takes a document and perform the right analysis, depending on the document's type (is it URL, free text, binary data, and so on)
+ - `getProgress`, which returns the current progress of the analysis process
+ - `publish`, which takes all user's modifications made to the analysis results, and stores them
 
 This reduces by a big amount the total surface of the API, which used to be bigger and, therefore, much less maintainable and too tightly coupled to the client's implementation. On the other hand, by using less finely grained services there exist the risk of making it too difficult to split pages on the client in smaller pages. This is a trade-off between ergonomics and adaptability, however I prefer this approach since it allows new developers to easily get on board and start writing code from their first day on both the client and server, without having too much to learn about client-server interactions; in addition to this, offering few and "big" services encourage front-end programmers to fetch all the needed data in one single request at load time, which, as described in Chapter 5, can be a big win in terms of both perceived and computational performance. 
 Even though the basic structure of the module might seem completely RESTful, there are a couple of exceptions:
 
- - the _login_ service, which makes use of cookies to authenticate the user in the following requests; this isn't completely RESTless, since it doesn't make use of such cookies to store session data
- - the _getProgress_ service, which, at every call, exposes some session-tied state the server is keeping (the progress of the analysis asked by the user)
+ - the `login` service, which makes use of cookies to authenticate the user in the following requests; this isn't completely RESTless, since it doesn't make use of such cookies to store session data
+ - the `getProgress` service, which, at every call, exposes some session-tied state the server is keeping (the progress of the analysis asked by the user)
 
 ## Data refactoring
 
-As mentioned in the previous paragraphs, one of the main goals of the mediator module is to re-factor the result into a more suitable format, while enriching it by pre-computing useful aggregation such as totals, counts, and so on. 
+As mentioned in the previous paragraphs, one of the main goals of the mediator module is to re-factor the result into a more suitable format, while enriching it by pre-computing useful aggregation such as totals, counts, and so on. In other words, starting from a list of tags, I moved the complexity on the server by preparing all the statistics needed in the Overview page, collecting the list the Dropbox files in the configured folder for the Analyze data (anticipating the eventual request), and so on. In addition to this, the module enriches the output of the analysis by flagging the annotations basing on their category (is a given tag an inference or has it been extracted from the text?). 
+The whole process might seem a small addition to the global picture, however it is of the uttermost importance that the Web Server undertakes the task of preparing all the data the client might need, supporting as many activities, aggregations and flexibility as possible, and this stands true especially if one thinks of the API as an abstraction layer, enabling client applications that are insightful and performant.
 
-## Outline
- - data refactoring 
+## New features and legacy's improvement
+
  - performance fixes:  
      + client doesn't wait document to be indexed (it's async)
      + parallel processing of many documents at once
@@ -58,5 +59,4 @@ By digging a little bit more into the problem, I found out that, while the annot
 
  - compromises: simplify the add tag
 
-#### GIFs of interactions?
 
