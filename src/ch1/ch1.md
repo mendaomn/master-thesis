@@ -59,3 +59,9 @@ During my first days I searched for competing text mining tools with the purpose
 
 On the visualization side, though, this exercise hasn't been enlightening: on one hand, existing tools often targets really specific markets where presentation details aren't taken too much in consideration, thus the teams working on these solutions focus primarily on functionalities and "smartness" of the software; on the other hand, data visualization is a highly data-dependent discipline, meaning it is ultimately based on what type of data one is willing to show and, most importantly, what kind of reasoning it is trying to support (e.g. - metrics comparison versus content distribution). For these reasons, I decided to go on framing the problem CAM is trying to solve for its users, then to attack eventual visualization challenges from a completely user-centered perspective, meaning my goal would be finding the least complex way to guide the user through the possibly big amount of data the system is capable of producing.
 
+## Technical specs
+
+As it becomes more clear what the scope of the project is, it is common practice to delimit the work to be done with a series of technical constraints. In my case, the specifications are pretty loose:
+
+ - on the _front-end_, HTML, CSS and JavaScript are the technologies of choice; the running environment is supposed to include every major browser up to the last two versions (Mozilla Firefox, Google Chrome, Internet Explorer and Apple Safari), with a minimum supported resolution of 1024x768. No particular framework or technology is enforced. 
+ - on the _back-end_, the existing code base is written in Java, so that is the language of choice. The system already relies on Shiro as authentication and security framework, and on JBoss as application server.
