@@ -13,13 +13,14 @@ MD_FILES := $(shell find $(SRC) -type f -name "*.md" | grep -v "README" | sort)
 DST = $(BUILD_PATH)$(OUT).pdf
 
 # Pandoc parameters
+BIBLIO = --bibliography $(SRC)/head/bibliography.bib
 VARS = --variable documentclass:memoir --variable geometry:margin=1.2in --variable fontsize:12pt
 PARS = --toc --number-sections --chapters --template=latex/template.tex $(VARS)
 
 default: build
 
 build: clean
-	pandoc $(PARS) $(MD_FILES) -s -o tmp.tex
+	pandoc $(PARS) $(MD_FILES) $(BIBLIO) -s -o tmp.tex
 	sed 's/{quote}/{quotationb}/g' tmp.tex > latex/thesis.tex
 	#cp tmp.tex latex/thesis.tex
 	pandoc $(PARS) latex/thesis.tex -s -o $(DST)

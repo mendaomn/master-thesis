@@ -10,7 +10,7 @@ This repository contains my Master thesis, worked on at Mondeca (Paris, FR) in t
 - [Chapter 4](./src/ch4/ch4.md), focusing on the user: from useful to usable
 - [Chapter 5](./src/ch5/ch5.md), perfmatters: a deep dive into performance
 - [Chapter 6](./src/ch6/ch6.md), the back-end: architecture, new features and the legacy problem
-- [Chapter 7](./src/ch7/ch7.md), wrapping up: i18n, future work and conclusions
+- [Chapter 7](./src/ch7/ch7.md), wrap up: i18n, future work and conclusions
 
 ## Build instructions
 
