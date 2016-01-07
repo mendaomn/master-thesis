@@ -41,21 +41,34 @@ The whole process might seem a small addition to the global picture, however it 
 
 ## New features and legacy's improvement
 
- - performance fixes:  
-     + client doesn't wait document to be indexed (it's async)
-     + parallel processing of many documents at once
-     + server-side session storage to cache results until needed
-     + progress tracking 
+Because the new _CamAPI_ I introduce sits in between client and server, I had the possibility to rethink the way the two endpoint interact with each other, focusing on improving both performance and user experience; even though the legacy code plays the biggest part of the back-end implementation, there are plenty of opportunities to enhance the existent. Therefore, I contributed with four new features: asynchronous indexation, parallelization, results caching and progress tracking.
 
-Because the new CamAPI I introduce sits in between client and server, I had the possibility to rethink the way the two endpoint interact with each other. 
+#### Asynchronous indexation {-}
 
- - the importance of progress, proposals and solution
+In the old CAM, while a document is being processed, the client waits for the process to be finished and gets the result back as soon as it completes in a synchronous fashion. There are two severe drawbacks of this approach: on one side, the client is forced to process one resource at a time, on the other side, the full result of the analysis needs to be transfered on the wire, which may be fairly big and caused in the past several problems for the too heavy payload. My solution for this issue is to break the interaction into smaller pieces and make the exchange of information between client and server asynchronous, as follows: 
 
+ - client initiates indexation process of a document
+ - server processes the result
+ - client is free to ask for the result as soon as it needs it
+
+Such an approach is not only more suitable for an user interface (which usually implies a lot of asynchronous operations), but opens up to new opportunities.
+
+#### Parallelization {-}
+
+The most important enhancement made possible by the asynchronism of the requests is the capability for the client to trigger more than one analysis at once, in a parallel fashion. In my new design, indeed, a "pool" of documents is created and it is then sent to the server for analysis. The advantage is evident: there is now a much higher throughput of processed documents.
+From an implementation point of view, one could have done better than I did; in fact, in order to process more than one document at the same time, I simply open more than one connection to the server (the number of which is, in most browsers, limited to 6). The web server handles every incoming request with a separate thread, thus true parallelism is achieved.
+However, a much smarter solution would have been sending the list of documents to the server (the so called _pool_), and have it creating threads; in this way, more than 6 documents could be processed at a time, and just a single network request should have been opened on the client. The reason why I didn't take this path is for it would have taken too much time for me to implement a thread pool on the server, and I was told not to spend too much energy on the back-end, since the company is mostly interested in an usable interface, rather than having me prioritizing parallel execution of more than 6 resources. In addition to this, when the pool contains a lot of documents, the whole system is blocked waiting for every resource - possibly big files - to be transferred to the server, therefore canceling the benefit of parallelism.
+
+#### Results caching {-}
+
+In order to enable the client to asynchronously request for the result of a given document's analysis, it is necessary to have a session-linked results cache on the server; this ultimately solves the problem of having a possibly too big payload to be served in a single connection, since the client can now specifically ask for the parts of the result it is interested in at that precise time: when the user is on the Overview page, there's no need to fetch the data that would only be used in the Review page, nor the log messages that can be accessed in the Troubleshooting section. Since in the desktop environment CAM targets the network is almost always the performance bottleneck, such a strategy has the more general benefit of increasing the overall responsiveness of the application.     
+
+#### Progress tracking {-}
+
+Finally, I introduce in CAM a progress bar showing the percentage of completion of every document (which makes sense now that parallel execution is present), plus a global progress indicator which relates to all the resources being processed.
 As I proceeded submitting my plan to the members of the team who used to work on CAM in the past, I immediately encountered some resistance in introducing the progress tracking; this was not because there is something wrong with the idea itself, but it turned out there's no actual way to get such information from the annotation server, which basically processes the whole document in a stateless manner. 
-
-While this may seem a small detail in the entirety of the CAM application, there are some considerations to make on the user experience of it when no progress tracking is available. One of the most important phase of the interaction between a person and an object (being it a real or a virtual one) is the feedback the person is presented with, indeed, without some sort of hint that the interaction took place
-
-By digging a little bit more into the problem, I found out that, while the annotation server does its job in a single run, the web server still needs to post-process the result in several ways, before storing the result. In such a multi-step way of proceeding I saw an opportunity to 
+While this may seem a small detail in the entirety of the CAM application, there are some considerations to make on the user experience of it when no progress tracking is available. One of the most important phase of the interaction between a person and an object (being it a real or a virtual one) is the __feedback__ the person is presented with, indeed, without some sort of hint that the interaction took place, we usually tend to be doubtful of the success of the operation: _did I click the button? did the system receive my command?_ While this is very true for every interaction, it is even more fundamental when talking long activities. In the old CAM there is no way to estimate the amount of time remaining, so the user can't take decisions upon that: _can I switch to some other task while I wait? should I skip that resource, and work on simpler ones for the moment? Am I to wait an hour or a minute?_ Thus, I started to investigate how this may be achieved, because I believe that a rough and imprecise indication is much better than no indication in this case. 
+By digging a little bit more into the problem, I found out that, while the annotation server does its job in a single run, the web server still needs to post-process the result in several ways, before storing the result. In such a multi-step way of proceeding I saw an opportunity to achieve my goal: I identified 5 steps that measured a non-negligible amount of time to complete and used those as an indicator of how far in the processing of the document the system is. I am highly confident that, even though the 5 steps don't take the same time and they are really not much meaningful in terms of the actual activities they correspond to, it is still a big win to be able to present to the user of an estimation of how much work is done and how much is yet to be.
 
  - compromises: simplify the add tag
 
