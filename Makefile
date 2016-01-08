@@ -21,7 +21,7 @@ default: build
 
 build: clean
 	pandoc $(PARS) $(MD_FILES) $(BIBLIO) -s -o tmp.tex
-	sed 's/{quote}/{quotationb}/g' tmp.tex > latex/thesis.tex
+	sed 's/{quote}/{quotationb}/g' tmp.tex | sed '/MND.*CITES/,/MND.*CITES/d' > latex/thesis.tex
 	#cp tmp.tex latex/thesis.tex
 	pandoc $(PARS) latex/thesis.tex -s -o $(DST)
 	rm tmp.tex
