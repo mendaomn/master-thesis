@@ -1,0 +1,15 @@
+\usepackage[svgnames]{xcolor}
+\usepackage{framed}
+\usepackage{soul}
+\definecolor{shadecolor}{named}{Crimson}
+\definecolor{LightCrimson}{RGB}{224, 124, 144}
+\definecolor{Light}{gray}{.90}
+\sethlcolor{Light}
+\newenvironment{quotationb}%
+{\color{Crimson}\begin{leftbar}\begin{quotation}}%
+{\end{quotation}\end{leftbar}\ignorespacesafterend}
+% {\color{white}\begin{shaded}\begin{quotation}}%
+% {\end{quotation}\end{shaded}\ignorespacesafterend}
+
+\let\OldTexttt\texttt
+\renewcommand{\texttt}[1]{\OldTexttt{\hl{#1}}}

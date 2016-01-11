@@ -17,7 +17,7 @@ As the current state of the application is at its earliest stages, I mainly focu
 
 Let’s start with loading speed. The most common metric referred to when assessing loading speed is the so called speed index, which basically is the average time at which visible parts of the page are displayed, expressed in milliseconds. As the _webpagetest.org_ documentation puts it (emphasis added) 
 
->"_The Speed Index metric was added to WebPagetest in April, 2012 and measures **how quickly the page contents are visually populated** (where lower numbers are better).  It is particularly useful for comparing experiences of pages against each other (before/after optimizing, my site vs competitor, etc) and should be used in combination with the other metrics (load time, start render, etc) to better understand a site's performance._"
+>"The Speed Index metric was added to WebPagetest in April, 2012 and measures **how quickly the page contents are visually populated** (where lower numbers are better).  It is particularly useful for comparing experiences of pages against each other (before/after optimizing, my site vs competitor, etc) and should be used in combination with the other metrics (load time, start render, etc) to better understand a site's performance."
 
 Webpagetest.org is one of the most popular and useful online tools for performance evaluation on the web; it basically runs a tests suite over a given URL and outputs a series of tips to improve the performance and important measures to be aware of. For the sake of this first experiment, I am only reporting the Speed Index, which was __4575__. This figure doesn’t tell a lot per se, but it is important to know that a solid speed index value is around 1000, as it will be covered in the next sections.
 
