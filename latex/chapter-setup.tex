@@ -1,19 +1,16 @@
 \usepackage{tikz}
 
-%chapter color
-\definecolor{chaptercolor}{HTML}{008bb2}
-
 %define new chapter style (just for a nicer look)
 \makechapterstyle{mystyle}{%
   \chapterstyle{default}
   \renewcommand*{\chapnumfont}{\normalfont\Huge\sffamily\bfseries}
-  \renewcommand*{\chaptitlefont}{\normalfont\huge\sffamily\itshape\color{Crimson}}
+  \renewcommand*{\chaptitlefont}{\normalfont\huge\sffamily\itshape\color{maincolor}}
   \settowidth{\chapindent}{\chapnumfont 111}
   \renewcommand*{\chapterheadstart}{}
-  \renewcommand*{\chapnamefont}{\hfill\color{Crimson}\normalfont\Huge\sffamily\bfseries}
+  \renewcommand*{\chapnamefont}{\hfill\color{maincolor}\normalfont\Huge\sffamily\bfseries}
   \renewcommand*{\printchapternum}{%
   \begin{tikzpicture}[baseline={([yshift=-.6ex]current bounding box.center)}]
-  \node[fill=Crimson,circle,text=white] {\thechapter};
+  \node[fill=maincolor,circle,text=white] {\thechapter};
   \end{tikzpicture}\\[1ex]
   \hrule height 1.5pt}
   \renewcommand*{\printchaptertitle}[1]{%

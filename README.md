@@ -4,7 +4,7 @@ This repository contains my Master thesis, worked on at [Mondeca](http://www.mon
 
 Downloadable PDF [here](https://goo.gl/aBBFFK)
 
-## Table of content
+## Table of contents
 
 - [Chapter 1](./src/ch1/ch1.md), the context: Mondeca, the product and my responsibilities
 - [Chapter 2](./src/ch2/ch2.md), the process: technologies, specs and sketches
