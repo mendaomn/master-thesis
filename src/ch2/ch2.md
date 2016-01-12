@@ -1,6 +1,4 @@
-# The process
-
-Technologies, specs and sketches
+# The process: technologies, specs and sketches
 
 In my second month as intern, I went on implementing the initial sketches that served mainly the purpose of better explaining the ideas I had for the new version of the CAM application.
 

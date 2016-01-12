@@ -1,6 +1,4 @@
-# Wrap up
-
-i18n, future work and conclusions
+# Wrap up: i18n, future work and conclusions
 
 In order to conclude the description of the CAM project, it is worth mentioning how the application is internationalized; in addition, since Mondeca believes in the future of such a product, some considerations on the future work that can be done to further improve the experience are included in this final chapter.
 

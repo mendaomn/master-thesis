@@ -4,7 +4,7 @@ This repository contains my Master thesis, worked on at Mondeca (Paris, FR) in t
 
 ## Table of content
 
-- [Chapter 1](./src/ch1/ch1.md), the context: introducing Mondeca, the product and my responsibilities
+- [Chapter 1](./src/ch1/ch1.md), the context: Mondeca, the product and my responsibilities
 - [Chapter 2](./src/ch2/ch2.md), the process: technologies, specs and sketches
 - [Chapter 3](./src/ch3/ch3.md), the core screens
 - [Chapter 4](./src/ch4/ch4.md), focusing on the user: from useful to usable

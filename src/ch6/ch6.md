@@ -1,6 +1,4 @@
-# The back-end
-
-Architecture, new features and the legacy problem
+# The back-end: architecture, new features and the legacy problem
 
 During my fifth month as intern, I worked on the back-end side of the project, my tasks being refactoring the existing code, developing new features and integrating it on the front-end.
 

@@ -1,6 +1,4 @@
-# Perfmatters 
-
-A deep dive into performance
+# Perfmatters: a deep dive into performance
 
 When it comes to performance on the web, more and more often developers don’t take into account the external factors that constrain an application's speed, which don’t depend on architectural patterns or optimized data structures. However, those are the real bottlenecks in the web of today, especially when targeting a desktop environment, where developers can count on medium to high processing power. I believe this is a really important problem to address for CAM, and other Mondeca's products as well, since we are not producing applications to be used on mobile; in addition, most of the jobs and features that such products offer are run on servers, therefore the client needs to continuously rely on network requests and gets slowed down by the decently big amount of data that needs to be transferred on the wire. For these reasons, it feels compelling to reduce the impact on performance of elements that are independent from the execution of the jobs themselves.
 Most commonly, such elements are the following:
