@@ -18,8 +18,4 @@ Downloadable PDF [here](https://goo.gl/aBBFFK)
 
 Simply run `make`
 
-Make sure you installed the dependencies `pandoc` and `texlive`
-
-### Future styling
-
-In the future, `prince` will be used to skip LaTeX and style the publication with regular CSS
+Make sure you installed the dependencies `pandoc`, `texlive` and `prince`
