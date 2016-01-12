@@ -1,9 +1,11 @@
-\documentclass[12pt,]{memoir}
+\documentclass[12pt,svgnames]{memoir}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
+% to include cover page
+\usepackage{pdfpages}
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
@@ -61,9 +63,10 @@
 %\setlength{\parskip}{6pt plus 2pt minus 1pt}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \setcounter{secnumdepth}{5}
-\usepackage[svgnames]{xcolor}
+\usepackage{xcolor}
 %theme color
-\definecolor{maincolor}{RGB}{220, 22, 6} %CRIMSON
+%\definecolor{maincolor}{RGB}{220, 22, 6} %CRIMSON
+\definecolor{maincolor}{HTML}{F62459}
 %\definecolor{maincolor}{RGB}{70, 61, 140} %DARK SLATE BLUE
 \usepackage{framed}
 \usepackage{soul}
@@ -102,6 +105,32 @@
 \date{}
 
 \begin{document}
+
+\includepdf{src/content/frontcover/frontcover.pdf}
+% \begin{titlingpage}
+% 	\centering
+% 	\includegraphics[width=0.5\textwidth]{src/img/eurecom.jpeg}\par\vspace{1cm}
+% 	{\scshape\LARGE EURECOM \par}
+% 	\textsc{Communication System Security}\par 
+% 	\vspace{1cm}
+% 	{\scshape\Large Final year project\par}
+% 	at Mondeca, Paris\par
+% 	\vspace{1.5cm}
+% 	{\huge\bfseries A web interface for the Content Annotation Manager\par}
+% 	\vspace{2cm}
+% 	{\Large\itshape Alessandro Menduni\par}
+% 	\vfill
+% 	supervised by\par
+% 	Anh \textsc{Hyun}\par
+% 	Raphael \textsc{Troncy}
+
+% 	\vfill
+
+% % Bottom of the page
+% 	{\large \today\par}
+% 	\vspace{0.5cm}
+% 	Non confidential\par
+% \end{titlingpage}
 
 {
 \hypersetup{linkcolor=black}
@@ -167,13 +196,13 @@ Here's how it looks like at the moment:
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./src/content/tail/img/oldCAM-annotations.png}
+\includegraphics{./src/img/oldCAM-annotations.png}
 \caption{Old CAM, Annotations}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./src/content/tail/img/oldCAM-overview.png}
+\includegraphics{./src/img/oldCAM-overview.png}
 \caption{Old CAM, Overview}
 \end{figure}
 
@@ -870,7 +899,7 @@ transforming this sketch
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./src/content/tail/img/sketch-overview.png}
+\includegraphics{./src/img/sketch-overview.png}
 \caption{Sketch, Overview}
 \end{figure}
 
@@ -878,7 +907,7 @@ into this HTML page
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./src/content/tail/img/mockup-overview.png}
+\includegraphics{./src/img/mockup-overview.png}
 \caption{Mockup, Overview}
 \end{figure}
 
@@ -935,7 +964,7 @@ taxonomy.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./src/content/tail/img/overview-A.png}
+\includegraphics{./src/img/overview-A.png}
 \caption{Overview screen, version A}
 \end{figure}
 
@@ -1007,7 +1036,7 @@ absence of the ``aboutness'' data.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./src/content/tail/img/overview-B.png}
+\includegraphics{./src/img/overview-B.png}
 \caption{Overview screen, version B}
 \end{figure}
 
@@ -1078,7 +1107,7 @@ filters' bar covered partially the resulting outcome of those actions.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./src/content/tail/img/review-open.png}
+\includegraphics{./src/img/review-open.png}
 \caption{Review screen, filters open}
 \end{figure}
 
@@ -1095,7 +1124,7 @@ for the user to find it.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./src/content/tail/img/review-breadcrumb.png}
+\includegraphics{./src/img/review-breadcrumb.png}
 \caption{Review screen, breadcrumb faceted navigation}
 \end{figure}
 
@@ -1141,7 +1170,7 @@ which instead is the most important thing to pay attention to.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./src/content/tail/img/analyze-screen.png}
+\includegraphics{./src/img/analyze-screen.png}
 \caption{Analyze screen, global glance}
 \end{figure}
 
@@ -1210,7 +1239,7 @@ rollback to a previous state, for example when she deletes some tags.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./src/content/tail/img/review-notification.png}
+\includegraphics{./src/img/review-notification.png}
 \caption{Review screen, removing notification, with possibility to undo}
 \end{figure}
 
@@ -1282,7 +1311,7 @@ to roll back and change their minds.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./src/content/tail/img/review-summary.png}
+\includegraphics{./src/img/review-summary.png}
 \caption{Review screen, summary}
 \end{figure}
 
@@ -1361,7 +1390,7 @@ state relate to each other.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./src/content/tail/img/review-sidebar-animation.png}
+\includegraphics{./src/img/review-sidebar-animation.png}
 \caption{Review screen, sidebar animation}
 \end{figure}
 
@@ -1385,7 +1414,7 @@ has just gone to, by sliding up towards the bin icon when disappearing.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./src/content/tail/img/review-notification-animation.png}
+\includegraphics{./src/img/review-notification-animation.png}
 \caption{Review screen, notification animation}
 \end{figure}
 
@@ -1658,13 +1687,13 @@ injected.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./src/content/tail/img/overview-appshell.png}
+\includegraphics{./src/img/overview-appshell.png}
 \caption{Overview screen, application shell}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./src/content/tail/img/review-appshell.png}
+\includegraphics{./src/img/review-appshell.png}
 \caption{Review screen, application shell}
 \end{figure}
 
@@ -1701,7 +1730,7 @@ happening?
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./src/content/tail/img/overview-jsprofile.png}
+\includegraphics{./src/img/overview-jsprofile.png}
 \caption{Overview screen, JavaScript profile in the Timeline}
 \end{figure}
 
@@ -1738,7 +1767,7 @@ of the rendering process.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./src/content/tail/img/csstriggers.png}
+\includegraphics{./src/img/csstriggers.png}
 \caption{http://csstriggers.com/ - It offers a quick summary of which
 CSS properties trigger which phase of the rendering process}
 \end{figure}
@@ -1774,7 +1803,7 @@ the architecture of the system, by listing its components.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{./src/content/tail/img/architecture.png}
+\includegraphics{./src/img/architecture.png}
 \caption{CAM Architecture}
 \end{figure}
 
