@@ -107,6 +107,12 @@
 \begin{document}
 
 \includepdf{src/content/frontcover/frontcover.pdf}
+\addtocounter{page}{-1} % Do not count front cover as page
+% Add empty page, not counted in page increment
+\null
+\thispagestyle{empty}%
+\addtocounter{page}{-1}%
+\newpage
 % \begin{titlingpage}
 % 	\centering
 % 	\includegraphics[width=0.5\textwidth]{src/img/eurecom.jpeg}\par\vspace{1cm}

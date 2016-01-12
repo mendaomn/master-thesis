@@ -22,6 +22,7 @@ PARS = --toc --number-sections --chapters --template=$(SRC)/latex/template.tex $
 default: build
 
 build: clean
+	prince $(SRC)/content/frontcover/frontcover.html --page-margin=0
 	pandoc $(PARS) $(MD_FILES) $(BIBLIO) -s -o tmp.tex
 	sed 's/{quote}/{quotationb}/g' tmp.tex | sed '/MND.*CITES/,/MND.*CITES/d' > $(SRC)/latex/thesis.tex
 	pdflatex $(SRC)/latex/thesis.tex && pdflatex $(SRC)/latex/thesis.tex

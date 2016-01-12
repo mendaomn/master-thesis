@@ -1,5 +1,5 @@
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
@@ -27,25 +27,32 @@ body {
     color: white;
 }
 
+.center {
+    text-align: center;
+}
+
 img {
     max-width: 100%;
 }
 
-.logo{
-	position: absolute;
-	bottom: 15px;
-	padding: 0 25px;
+.logo {
+    position: absolute;
+    bottom: 15px;
+    padding: 0 25px;
 }
 
-.author{
-	text-align: center;
-	font-style: italic;
-	font-weight: 100;
-	font-size: 1.2em;
-	margin: 50px 0;
+.author {
+    font-style: italic;
+    font-weight: 100;
+    font-size: 1.2em;
+    margin: 50px 0;
+}
+
+.date{
+	
 }
 
 footer {
-	position: absolute;
-	bottom: 15px;
+    position: absolute;
+    bottom: 15px;
 }
