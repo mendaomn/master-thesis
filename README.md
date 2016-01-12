@@ -2,6 +2,8 @@
 
 This repository contains my Master thesis, worked on at Mondeca (Paris, FR) in the context of a Double Degree program between TELECOM ParisTech (EURECOM) and Polytechnic of Turin.
 
+Downloadable PDF [here](https://goo.gl/aBBFFK)
+
 ## Table of content
 
 - [Chapter 1](./src/ch1/ch1.md), the context: Mondeca, the product and my responsibilities
