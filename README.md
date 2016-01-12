@@ -1,6 +1,6 @@
 # Master thesis
 
-This repository contains my Master thesis, worked on at Mondeca (Paris, FR) in the context of a Double Degree program between TELECOM ParisTech (EURECOM) and Polytechnic of Turin.
+This repository contains my Master thesis, worked on at [Mondeca](http://www.mondeca.com/) (Paris, FR) in the context of a Double Degree program between [TELECOM ParisTech](http://www.telecom-paristech.fr/) ([EURECOM](http://www.eurecom.fr/en)) and [Polytechnic of Turin](http://www.polito.it/).
 
 Downloadable PDF [here](https://goo.gl/aBBFFK)
 
