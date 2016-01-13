@@ -45,11 +45,21 @@ img {
     font-style: italic;
     font-weight: 100;
     font-size: 1.2em;
-    margin: 50px 0;
+    margin: 50px 0 0;
 }
 
-.date{
-	
+.date {}
+
+.supervisors {
+    margin-bottom: 50px;
+}
+
+.supervisors p {
+    margin: 0;
+}
+
+.supervisors p:first-child {
+    margin-bottom: 10px;
 }
 
 footer {
