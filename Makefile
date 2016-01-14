@@ -14,7 +14,7 @@ DST = $(BUILD_PATH)$(OUT).pdf
 
 # Pandoc parameters
 BIBLIO = --bibliography $(SRC)/content/head/bibliography.bib
-VARS = --variable documentclass:memoir --variable geometry:margin=1.2in --variable fontsize:12pt
+VARS = --variable documentclass:memoir --variable classoption:oneside --variable geometry:margin=1.2in --variable fontsize:12pt
 HEADERS = -H $(SRC)/latex/colors.tex -H $(SRC)/latex/quote-setup.tex -H $(SRC)/latex/code-snippets-setup.tex -H $(SRC)/latex/chapter-setup.tex
 BODY_START = -B $(SRC)/latex/frontcover.tex
 PARS = --toc --number-sections --chapters --template=$(SRC)/latex/template.tex $(HEADERS) $(BODY_START) $(VARS)
