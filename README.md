@@ -4,6 +4,8 @@ This repository contains my Master thesis, worked on at [Mondeca](http://www.mon
 
 Downloadable PDF [here](https://goo.gl/aBBFFK)
 
+![Front cover](./src/img/frontcover.jpeg)
+
 ## Table of contents
 
 - [Introduction](./src/content/ch0/ch0.md)
