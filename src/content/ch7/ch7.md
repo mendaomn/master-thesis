@@ -19,5 +19,3 @@ The implementation is pretty straightforward: the web server lists the available
 Therefore, I simply introduced a _i18n_ module, which handles default language, current language, corner cases such as _no language_ and provides a simple `extractName` method to be used by the views to extract the label in the correct language from the given entity or class or else. 
 
 ## Future work
-
-## Conclusions
