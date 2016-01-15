@@ -1,6 +1,7 @@
 # The context: Mondeca, the product and my responsibilities
 
-This report concerns the six months I spent as intern at Mondeca, a French company located in Paris which sells software products capable of exploiting semantic technologies. In particular, their main product is the so-called Smart Content Factory (SCF), a complex system that allows companies to index, annotate and browse through their documentation. Indeed, main targets of the product are those companies which need to handle huge amounts of documents (newspapers, legal offices, and so on).
+In the ever expanding Web of data, content is quickly becoming more important than software itself. In such a context, the capability of giving meaning to unstructured data is more and more central to both big and small companies; at Mondeca, indeed, the sentence _Making Sense of Content_ is written on the front-door of the office, as it is the company's motto. 
+Indeed, the present work concerns the six months I spent as intern at Mondeca, a French company located in Paris which sells software products capable of exploiting semantic technologies. In particular, their main product is the so-called Smart Content Factory (SCF), a complex system that allows companies to index, annotate and browse through their documentation. Indeed, main targets of the product are those companies which need to handle huge amounts of documents (newspapers, legal offices, and so on).
 
 Let's say that National Geographic (who, by the way, is among Mondeca's customers) wants an automatic way to handle all the scientific articles it publishes onto its website; this is what it will happen:
 
@@ -10,6 +11,8 @@ Let's say that National Geographic (who, by the way, is among Mondeca's customer
  - the analysis outputs entities detected in the text, entities that have been inferred from the text (but that are not mentioned) and candidates that could be inserted in the ontology
  - a further rule-based classification is possible, meaning SCF will tag the documents according to some rules provided by the customer. For instance, SCF could tag as "Not for kids" the articles that are about crime, blood and sex
  - finally, it is possible to browse the whole documentation by means of a semantic search engine 
+
+As the need for meaning and structure grows, a partially new challenge opens up for UI designers and data visualization experts: creating applications capable of exposing in a clear and meaningful way the real and valuable _content_ of a given piece of data, hopefully supporting further reasoning or action over the conveyed information. It is precisely what I've been tasked to do at Mondeca during my 6 months internship.
 
 ## The CAM application
 
