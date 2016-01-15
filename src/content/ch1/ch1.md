@@ -1,6 +1,6 @@
 # The context: Mondeca, the product and my responsibilities
 
-In the ever expanding Web of data, content is quickly becoming more important than software itself. In such a context, the capability of giving meaning to unstructured data is more and more central to both big and small companies; at Mondeca, indeed, the sentence _Making Sense of Content_ is written on the front-door of the office, as it is the company's motto. 
+In the ever expanding Web of data, content is quickly becoming more important than software itself. In such a context, the capability of giving meaning to unstructured data is more and more central to both big and small companies; at Mondeca^[http://www.mondeca.com/], indeed, the sentence _Making Sense of Content_ is written on the front-door of the office, as it is the company's motto. 
 Indeed, the present work concerns the six months I spent as intern at Mondeca, a French company located in Paris which sells software products capable of exploiting semantic technologies. In particular, their main product is the so-called Smart Content Factory (SCF), a complex system that allows companies to index, annotate and browse through their documentation. Indeed, main targets of the product are those companies which need to handle huge amounts of documents (newspapers, legal offices, and so on).
 
 Let's say that National Geographic (who, by the way, is among Mondeca's customers) wants an automatic way to handle all the scientific articles it publishes onto its website; this is what it will happen:
@@ -43,7 +43,7 @@ However, the main focus of CAM was better defined during the course of the itera
 
 ## Learning about competitors
 
-During my first days I searched for competing text mining tools with the purpose of focusing on both the different features they present and the ways they present their results, in order to take inspiration in terms of visualization techniques. Such an activity led me to narrow down a list of very simplified features competitors implement:
+During my first days I searched for competing text mining tools with the purpose of focusing on both the different features they present and the ways they present their results, in order to take inspiration in terms of visualization techniques. Such an activity led me to narrow down a list of very simplified features competitors^[http://www.butleranalytics.com/20-text-mining-and-text-analysis-tools/] implement:
 
  - Sentiment analysis on entities or keywords
  - Sentiment comparisons of a term over different data sources

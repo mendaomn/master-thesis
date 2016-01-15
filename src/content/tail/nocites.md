@@ -18,5 +18,10 @@ MND_START_CITES
 [@browsers]
 [@styleguide]
 [@gulp]
+[@animations]
+[@animations-ux]
+[@perfmatters1]
+[@perfmatters2]
+[@perfmatters3]
 
 MND_END_CITES

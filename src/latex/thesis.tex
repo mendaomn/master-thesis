@@ -156,16 +156,16 @@ responsibilities}\label{the-context-mondeca-the-product-and-my-responsibilities}
 In the ever expanding Web of data, content is quickly becoming more
 important than software itself. In such a context, the capability of
 giving meaning to unstructured data is more and more central to both big
-and small companies; at Mondeca, indeed, the sentence \emph{Making Sense
-of Content} is written on the front-door of the office, as it is the
-company's motto. Indeed, the present work concerns the six months I
-spent as intern at Mondeca, a French company located in Paris which
-sells software products capable of exploiting semantic technologies. In
-particular, their main product is the so-called Smart Content Factory
-(SCF), a complex system that allows companies to index, annotate and
-browse through their documentation. Indeed, main targets of the product
-are those companies which need to handle huge amounts of documents
-(newspapers, legal offices, and so on).
+and small companies; at Mondeca\footnote{http://www.mondeca.com/},
+indeed, the sentence \emph{Making Sense of Content} is written on the
+front-door of the office, as it is the company's motto. Indeed, the
+present work concerns the six months I spent as intern at Mondeca, a
+French company located in Paris which sells software products capable of
+exploiting semantic technologies. In particular, their main product is
+the so-called Smart Content Factory (SCF), a complex system that allows
+companies to index, annotate and browse through their documentation.
+Indeed, main targets of the product are those companies which need to
+handle huge amounts of documents (newspapers, legal offices, and so on).
 
 Let's say that National Geographic (who, by the way, is among Mondeca's
 customers) wants an automatic way to handle all the scientific articles
@@ -283,7 +283,8 @@ During my first days I searched for competing text mining tools with the
 purpose of focusing on both the different features they present and the
 ways they present their results, in order to take inspiration in terms
 of visualization techniques. Such an activity led me to narrow down a
-list of very simplified features competitors implement:
+list of very simplified features competitors\footnote{http://www.butleranalytics.com/20-text-mining-and-text-analysis-tools/}
+implement:
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -392,10 +393,11 @@ adopt so that the development of the functionalities, that enable the
 application to offer an interactive experience to the user, will be as
 fast and productive as possible. Naturally, an MVC pattern (or similar)
 needed to be adopted, as really often happens in web applications and UI
-development. I decided to go for Angular, a JavaScript framework
-targeting single page applications, after having considered Backbone and
-React, as they are the main players in the front-end frameworks game.
-While Backbone offers a much more lightweight JavaScript file and great
+development. I decided to go for Angular\footnote{https://angularjs.org/},
+a JavaScript framework targeting single page applications, after having
+considered Backbone\footnote{http://backbonejs.org/} and React\footnote{https://facebook.github.io/react/},
+as they are the main players in the front-end frameworks game. While
+Backbone offers a much more lightweight JavaScript file and great
 extensibility and freedom in the choice of plugins, template engine, and
 so on, this comes at the cost of having to manually write a lot of code
 and browsing through sparse documentation (each plugin has its own). On
@@ -410,36 +412,37 @@ quick to get going and easy to learn. My first concern in choosing the
 right environment, though, was going for solutions that will be easily
 maintained by the company when I will finish my stage; people at Mondeca
 in fact are prevalently trained in Java programming, and they have in
-fact always developed web UIs through the use of the Google Web Toolkit,
-which allows them to cross-compile Java code into JavaScript and
-HTML/CSS. Thus, I should make it as straightforward as possible for them
-to go in and modify something when needed. Plus, a big factor was the
-availability for Mondeca of an outsourcing partner which already takes
-care of some of the web UI development for them, and which is a huge
-expert in Angular-based applications. Therefore, the company can rely on
-a trusted partner in the future in order to handle my project's
-evolution. However, Angular has a lot of bonus features that are great
-for CAM: first of all, it offers out-of-the-box two-ways data binding,
-which is the automatic synchronization of data between the model and
-view components. The way that Angular implements data-binding lets you
-treat the model as the single-source-of-truth in the application. The
-view is a projection of the model at all times. When the model changes,
-the view reflects the change, and vice versa. This is of course great in
-many scenarios, but especially for CAM, which is an application that, at
-its core, takes as input a series of tags, lets the user browse through
-it and delete some of the tags, then sends as output the outcome of the
-user's interactions. In other words, the view needs to simply reflect
-what's in the model at all times and each user's decision can be simply
-reflected in the model by deleting (or adding) tags to the list. In
-addition to this, Angular relies on a declarative way of binding actions
-and data to HTML tags, which makes it great for fast and
-mock-up-centered iterations, where the design phase is limited and
-there's the need for a semi-working mock-up as early as possible in
-order to let the Product and Sales Managers be involved in the process.
-In fact, since I work alone on the project, I primarily talk with these
-people, who are neither designers nor developers, so it's really
-important that I allow them to focus on the functionality of the
-application, getting rid of static representations of what the final
+fact always developed web UIs through the use of the Google Web
+Toolkit\footnote{http://www.gwtproject.org/}, which allows them to
+cross-compile Java code into JavaScript and HTML/CSS. Thus, I should
+make it as straightforward as possible for them to go in and modify
+something when needed. Plus, a big factor was the availability for
+Mondeca of an outsourcing partner which already takes care of some of
+the web UI development for them, and which is a huge expert in
+Angular-based applications. Therefore, the company can rely on a trusted
+partner in the future in order to handle my project's evolution.
+However, Angular has a lot of bonus features that are great for CAM:
+first of all, it offers out-of-the-box two-ways data binding, which is
+the automatic synchronization of data between the model and view
+components. The way that Angular implements data-binding lets you treat
+the model as the single-source-of-truth\footnote{https://docs.angularjs.org/guide/databinding}
+in the application. The view is a projection of the model at all times.
+When the model changes, the view reflects the change, and vice versa.
+This is of course great in many scenarios, but especially for CAM, which
+is an application that, at its core, takes as input a series of tags,
+lets the user browse through it and delete some of the tags, then sends
+as output the outcome of the user's interactions. In other words, the
+view needs to simply reflect what's in the model at all times and each
+user's decision can be simply reflected in the model by deleting (or
+adding) tags to the list. In addition to this, Angular relies on a
+declarative way of binding actions and data to HTML tags, which makes it
+great for fast and mock-up-centered iterations, where the design phase
+is limited and there's the need for a semi-working mock-up as early as
+possible in order to let the Product and Sales Managers be involved in
+the process. In fact, since I work alone on the project, I primarily
+talk with these people, who are neither designers nor developers, so
+it's really important that I allow them to focus on the functionality of
+the application, getting rid of static representations of what the final
 product will look like. A final consideration on the drawbacks of using
 Angular needs to be made: it is a moderately heavy framework that could
 suffer from a performance perspective when thousands of bindings are
@@ -454,11 +457,12 @@ productivity}\label{automate-to-enhance-productivity}
 It is common knowledge that, in software development, productivity isn't
 just related to the time one spends writing down code, rather to the
 speed tasks get done at. In order to improve such a metric, good
-developers spend some time making their working environment more
-ergonomic and smooth; it for this reason that I wish to include in the
-following some parts of my job that are not directly related to CAM, but
-that allowed me to reduce the burden of side tasks that affect each
-developer's everyday job.
+developers spend some time\footnote{F8 2015 - Big Code: Developer
+  Infrastructure at Facebook's Scale - https://youtu.be/X0VH78ye4yY}
+making their working environment more ergonomic and smooth; it for this
+reason that I wish to include in the following some parts of my job that
+are not directly related to CAM, but that allowed me to reduce the
+burden of side tasks that affect each developer's everyday job.
 
 \subsubsection*{Front-end}\label{front-end}
 \addcontentsline{toc}{subsubsection}{Front-end}
@@ -1539,7 +1543,8 @@ considered as negligible.
 Let's start with loading speed. The most common metric referred to when
 assessing loading speed is the so called speed index, which basically is
 the average time at which visible parts of the page are displayed,
-expressed in milliseconds. As the \emph{webpagetest.org} documentation
+expressed in milliseconds. As the \emph{webpagetest.org}
+documentation\footnote{https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index}
 puts it (emphasis added)
 
 \begin{quotationb}
@@ -1588,32 +1593,32 @@ performance}\label{an-orthogonal-metric-perceived-performance}
 
 At the same way UCD predicates designing for the user, we shall put the
 user at the center while improving performance. Opposed to computational
-performance, perceived performance refers to how quickly a process
-appears to be completed to the user, which may often differ from the
-actual speed that process has been completed at. For instance, the
-amount of time an application takes to start up, or a file to download,
-is not made any faster by showing a splash screen or a progress bar.
-However, it satisfies some human needs: it appears faster to the user as
-well as providing a visual cue to let them know the system is handling
-their request. This is a very relied upon technique when trying to
-deliver a great experience of use for a not-so-snappy system; when it
-comes to web applications, the goal is to be able to display parts or
-previews of the final status the screen will reach, while loading it.
-Therefore, coming back to difference between speed index and time to
-first paint, the latter doesn't give an accurate indication of how
-responsive the application will be \textbf{perceived}. In this context,
-recently it has been gaining a lot of popularity a new technique
-consisting in showing the application shell as quickly as possible, then
-dynamically injecting content into the page. In order to achieve this, I
-had to first solve another issue that was heavily affecting the pages
-load time, causing that 4000+ speed index to be so high; that is, an
-Angular project is typically composed of a lot of HTML templates, in
-order to enhance code readability and maintainability. However, the
-downside of such a module-based approach, is that every directive or
-template included in the page is going to trigger an HTTP GET to the
-server requesting for the corresponding HTML file. So how do we solve
-this problem? I tested three solutions, basically building every new
-idea on top of the previous one.
+performance, perceived performance\footnote{http://www.tmurgent.com/WhitePapers/PerceivedPerformance.pdf}
+refers to how quickly a process appears to be completed to the user,
+which may often differ from the actual speed that process has been
+completed at. For instance, the amount of time an application takes to
+start up, or a file to download, is not made any faster by showing a
+splash screen or a progress bar. However, it satisfies some human needs:
+it appears faster to the user as well as providing a visual cue to let
+them know the system is handling their request. This is a very relied
+upon technique when trying to deliver a great experience of use for a
+not-so-snappy system; when it comes to web applications, the goal is to
+be able to display parts or previews of the final status the screen will
+reach, while loading it. Therefore, coming back to difference between
+speed index and time to first paint, the latter doesn't give an accurate
+indication of how responsive the application will be \textbf{perceived}.
+In this context, recently it has been gaining a lot of popularity a new
+technique consisting in showing the application shell as quickly as
+possible, then dynamically injecting content into the page. In order to
+achieve this, I had to first solve another issue that was heavily
+affecting the pages load time, causing that 4000+ speed index to be so
+high; that is, an Angular project is typically composed of a lot of HTML
+templates, in order to enhance code readability and maintainability.
+However, the downside of such a module-based approach, is that every
+directive or template included in the page is going to trigger an HTTP
+GET to the server requesting for the corresponding HTML file. So how do
+we solve this problem? I tested three solutions, basically building
+every new idea on top of the previous one.
 
 At first, I enabled templates \textbf{caching} through use of Angular's
 \texttt{\$templateCache} service. This allows Angular to fetch every
@@ -1691,8 +1696,9 @@ measurements such as ``immediate'' and ``instantaneous'': indeed,
 Nielsen proved that a waiting time under 100ms feels instantaneous,
 while a waiting time around 1000ms signifies a context switch to the
 user. Further analysis have further expanded these concepts and, most
-recently, have led to the definition of the RAIL model, which is defined
-by the Chrome team who came up with this new concept as (emphasis mine):
+recently, have led to the definition of the RAIL model\footnote{https://developers.google.com/web/tools/chrome-devtools/profile/evaluate-performance/rail},
+which is defined by the Chrome team who came up with this new concept as
+(emphasis mine):
 
 \begin{quotationb}
 ``a \textbf{user-centric performance model}. Every web app has these
@@ -2233,6 +2239,9 @@ Interaction Design}. New Riders.
 Google. 2014. \emph{Material Design Guidelines: Animation}.
 \url{https://www.google.com/design/spec/animation}.
 
+Head, Val. 2014. ``UI Animation and UX: a Not-so-Secret Friendship.''
+\url{http://alistapart.com/article/ui-animation-and-ux-a-not-so-secret-friendship}.
+
 Irish, Paul. 2015a. ``Perf Audits for Blink \& DevTools, CNet,
 Wikipedia, Time.''
 \url{https://docs.google.com/document/d/1K-mKOqiUiSjgZTEscBLjtjd6E67oiK8H2ztOiq5tigk/pub}.
@@ -2242,16 +2251,25 @@ Wikipedia, Time.''
 
 Irish, Paul, and Tali Garsiel. 2011. ``How Browsers Work: Behind the
 Scenes of Modern Web Browsers.''
-\url{http://www.html5rocks.com/en/tutorials/internals/howbrowserswork/\#Introduction}.
+\url{http://www.html5rocks.com/en/tutorials/internals/howbrowserswork}.
 
 Kearny, Meggin. 2014. \emph{The RAIL Performance Model}.
 \url{https://developers.google.com/web/tools/chrome-devtools/profile/evaluate-performance/rail}.
 
 Lewis, Paul. 2014a. ``Pixels Are Expensive.''
-\url{https://aerotwist.com/blog/pixels-are-expensive/}.
+\url{https://aerotwist.com/blog/pixels-are-expensive}.
 
 ---------. 2014b. ``CSS Triggers.''
-\url{https://aerotwist.com/blog/css-triggers/}.
+\url{https://aerotwist.com/blog/css-triggers}.
+
+Mishunov, Denys. 2015c. ``Why Performance Matters, Part 1: the
+Perception of Time.'' \url{https://goo.gl/30cXag}.
+
+---------. 2015d. ``Why Performance Matters, Part 2: Perception
+Management.'' \url{https://goo.gl/VLmJhM}.
+
+---------. 2015e. ``Why Performance Matters, Part 3: Tolerance
+Management.'' \url{https://goo.gl/LOei45}.
 
 Nielsen, Jakob. 1993. ``Response Times: the 3 Important Limits.'' In
 \emph{Usability Engineering}. Morgan Kaufmann Pub.
@@ -2263,7 +2281,7 @@ Osmani, Addy. 2012a. \emph{Learning JavaScript Design Patterns}.
 O'Reilly Media.
 
 ---------. 2012b. ``JavaScript Style Guides and Beautifiers.''
-\url{https://addyosmani.com/blog/javascript-style-guides-and-beautifiers/}.
+\url{https://addyosmani.com/blog/javascript-style-guides-and-beautifiers}.
 
 Osmani, Addy, and Matt Gaunt. 2015. \emph{Instant Loading Web Apps with
 an Application Shell Architecture}.
@@ -2274,5 +2292,9 @@ Simpson, Kyle. 2015. \emph{You Don't Know JS}. O'Reilly Media.
 Soegaard, Mads, and Rikke Friis Dam. 2015. \emph{The Encyclopedia of
 Human-Computer Interaction: 2nd Ed.}
 \url{https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed}.
+
+Stamatiou, Paul. 2014. ``Provide Meaning with Motion: Why Motion Design
+Is Now a Required Skill for Designers.''
+\url{http://paulstamatiou.com/design-provide-meaning-with-motion/}.
 
 \end{document}
