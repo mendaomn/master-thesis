@@ -6,5 +6,17 @@ MND_START_CITES
 [@uxpin-wireframing]
 [@hci-enc]
 [@nielsen]
+[@material]
+[@paulirish]
+[@paulirish-reddit]
+[@paullewis-perf]
+[@paullewis-csstriggers]
+[@rail]
+[@osmani-patterns]
+[@ydkjs]
+[@osmani-appshell]
+[@browsers]
+[@styleguide]
+[@gulp]
 
 MND_END_CITES
