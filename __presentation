@@ -1,0 +1,30 @@
+INTRO: 2min
+ - semantic + text mining = content augmentation
+ - CAM
+ - why a UI and what the challenges are
+
+PROBLEM: 5min
+ - old CAM
+ - goals 
+  - dashboard for quick overview
+  - human indexer for a new market
+  - cool demos, in the future, real tool
+
+SOLUTION: DESIGN 10min
+ - features and core design
+ - UX considerations
+ - analyze
+ - overview
+ - review
+
+SOLUTION: IMPLEMENTATION 10min
+ - web stack
+ - back-end new features
+ - perf 
+
+FUTURE WORK
+ (if time permits)
+
+(backup plan)
+ - full demo (recording)
+ - animation as a tool
