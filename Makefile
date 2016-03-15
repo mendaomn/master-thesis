@@ -10,7 +10,7 @@ OUT = thesis
 # Markdown files list
 MD_FILES := $(shell find $(SRC) -type f -name "*.md" | grep -v "README" | sort)
 # Destination file, in PDF
-DST = $(BUILD_PATH)$(OUT).pdf
+DST = $(BUILD_PATH)/$(OUT).pdf
 
 # Pandoc parameters
 BIBLIO = --bibliography $(SRC)/content/head/bibliography.bib
@@ -40,6 +40,6 @@ runh:
 	google-chrome $(BUILD_PATH)/html/thesis.html
 
 clean:
-	find $(BUILD_PATH) -maxdepth 1 -type f -exec rm {} \; 
+	find $(BUILD_PATH) -maxdepth 1 -type f -exec rm {} \;
 	rm -f tmp.tex
 	rm -f $(SRC)/latex/thesis.*
