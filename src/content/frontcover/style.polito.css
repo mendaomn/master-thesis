@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /*width: 230mm;*/
+    height: 297mm;
+}
+
+.col {
+    position: absolute;
+    height: 100%;
+}
+
+.col-left {
+    width: 148mm;
+    padding: 25px;
+}
+
+.col-right {
+    left: 148mm;
+    width: 72mm;
+}
+
+.bg-main {
+    /*background-color: #F62459;*/
+    border-right: 1px solid #F62459;
+    color: black;
+}
+
+.center {
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+}
+
+.logo {
+    position: absolute;
+    bottom: 15px;
+    padding: 0 25px;
+}
+
+.author {
+    font-style: italic;
+    font-weight: 100;
+    font-size: 1.2em;
+    margin: 50px 0 0;
+}
+
+.date {}
+
+.supervisors {
+    margin-bottom: 50px;
+}
+
+.supervisors p {
+    margin: 0;
+}
+
+.supervisors p:first-child {
+    margin-bottom: 10px;
+}
+
+footer {
+    position: absolute;
+    bottom: 15px;
+}
